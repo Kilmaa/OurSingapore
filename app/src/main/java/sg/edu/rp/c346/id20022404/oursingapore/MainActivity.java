@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText etTitle, etSingers, etYear;
+    EditText etName, etDescription, etArea;
     Button btnInsert, btnShowList;
     RatingBar ratingBar;
 
@@ -23,9 +23,9 @@ public class MainActivity extends AppCompatActivity {
 
         setTitle(getTitle().toString() + " ~ " + getResources().getText(R.string.title_activity_main));
 
-        etTitle = (EditText) findViewById(R.id.etTitle);
-        etSingers = (EditText) findViewById(R.id.etSingers);
-        etYear = (EditText) findViewById(R.id.etYear);
+        etName = (EditText) findViewById(R.id.etIsland);
+        etDescription = (EditText) findViewById(R.id.etDescription);
+        etArea = (EditText) findViewById(R.id.etArea);
         btnInsert = (Button) findViewById(R.id.btnInsertSong);
         btnShowList = (Button) findViewById(R.id.btnShowList);
         ratingBar = findViewById(R.id.ratingBarStars);
@@ -34,20 +34,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String title = etTitle.getText().toString().trim();
-                String singers = etSingers.getText().toString().trim();
-                if (title.length() == 0 || singers.length() == 0){
+                String name = etName.getText().toString().trim();
+                String description = etDescription.getText().toString().trim();
+                if (name.length() == 0 || description.length() == 0){
                     Toast.makeText(MainActivity.this, "Incomplete data", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
 
-                String year_str = etYear.getText().toString().trim();
-                int year = 0;
+                String area_str = etArea.getText().toString().trim();
+                int area = 0;
                 try {
-                    year = Integer.valueOf(year_str);
+                    area = Integer.valueOf(area_str);
                 } catch (Exception e){
-                    Toast.makeText(MainActivity.this, "Invalid year", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Invalid Island area", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -55,13 +55,13 @@ public class MainActivity extends AppCompatActivity {
 
                 //int stars = getStars();
                 int rating = (int) ratingBar.getRating();
-                dbh.insertSong(title, singers, year, rating);
+                dbh.insertIsland(name, description, area, rating);
                 dbh.close();
                 Toast.makeText(MainActivity.this, "Inserted", Toast.LENGTH_LONG).show();
 
-                etTitle.setText("");
-                etSingers.setText("");
-                etYear.setText("");
+                etName.setText("");
+                etDescription.setText("");
+                etArea.setText("");
 
             }
         });

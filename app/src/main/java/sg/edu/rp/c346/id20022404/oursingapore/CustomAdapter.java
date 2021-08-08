@@ -14,9 +14,9 @@ import java.util.ArrayList;
 public class CustomAdapter extends ArrayAdapter {
     Context parent_context;
     int layout_id;
-    ArrayList<Song> songs;
+    ArrayList<Island> songs;
 
-    public CustomAdapter(Context context, int resource, ArrayList<Song> objects) {
+    public CustomAdapter(Context context, int resource, ArrayList<Island> objects) {
         super(context, resource, objects);
         this.parent_context = context;
         this.layout_id = resource;
@@ -33,32 +33,32 @@ public class CustomAdapter extends ArrayAdapter {
         View rowView = inflater.inflate(layout_id, parent, false);
 
         // Obtain the UI components and do the necessary binding
-        TextView tvTitle = rowView.findViewById(R.id.tvTitle);
-        TextView tvSingers = rowView.findViewById(R.id.tvSingers);
+        TextView tvName = rowView.findViewById(R.id.tvName);
+        TextView tvDescription = rowView.findViewById(R.id.tvDescription);
         //TextView tvStars = rowView.findViewById(R.id.tvStars);
-        TextView tvYears = rowView.findViewById(R.id.tvYears);
+        TextView tvArea = rowView.findViewById(R.id.tvArea);
 
         ImageView imageView = rowView.findViewById(R.id.imageView);
 
         RatingBar ratingBar = rowView.findViewById(R.id.ratingBar);
 
         // Obtain the Android Version information based on the position
-        Song currentSong = songs.get(position);
+        Island currentIsland = songs.get(position);
 
         // Set values to the TextView to display the corresponding information
-        tvTitle.setText(currentSong.getTitle());
-        tvSingers.setText(currentSong.getSingers());
+        tvName.setText(currentIsland.getName());
+        tvDescription.setText(currentIsland.getDescription());
         String stars = "";
-        for(int i = 0; i < currentSong.getStars(); i++){
+        for(int i = 0; i < currentIsland.getStars(); i++){
             stars += " * ";
         }
         //tvStars.setText(stars);
 
-        ratingBar.setRating(currentSong.getStars());
+        ratingBar.setRating(currentIsland.getStars());
 
-        tvYears.setText(currentSong.getYearReleased() + "");
+        tvArea.setText(currentIsland.getArea() + "");
 
-        if(currentSong.getYearReleased() >= 2019){
+        if(currentIsland.getArea() >= 2019){
             imageView.setImageResource(R.drawable.newsong);
         }
         else {

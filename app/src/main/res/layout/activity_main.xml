@@ -8,47 +8,51 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/tvIsland"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/title"
+        android:text="@string/name"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
-        android:id="@+id/etTitle"
+        android:id="@+id/etIsland"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/hint_title" />
+        android:hint="@string/hint_name" />
 
     <TextView
+        android:id="@+id/tvDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/singers"
+        android:text="@string/description"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
-        android:id="@+id/etSingers"
+        android:id="@+id/etDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/hint_singers" />
+        android:hint="@string/hint_description" />
 
 
     <TextView
+        android:id="@+id/tvArea"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/year"
+        android:text="@string/area"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
-        android:id="@+id/etYear"
+        android:id="@+id/etArea"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/hint_year" />
+        android:hint="@string/hint_area" />
 
 
     <TextView
+        android:id="@+id/tvRating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/stars"
+        android:text="@string/rating"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <RatingBar
@@ -56,7 +60,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:numStars="5"
-        android:rating="2" />
+        android:stepSize="1" />
 
     <LinearLayout
         android:layout_width="match_parent"

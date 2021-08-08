@@ -8,18 +8,18 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/tvTitle"
+        android:id="@+id/tvName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Title"
+        android:text="Island Name"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/colorPrimary" />
 
     <TextView
-        android:id="@+id/tvSingers"
+        android:id="@+id/tvDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Singer"
+        android:text="Description"
         android:textColor="@color/colorAccent" />
 
     <LinearLayout
@@ -28,11 +28,11 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/tvYears"
+            android:id="@+id/tvArea"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:text="Year of Release" />
+            android:text="Island Area" />
 
         <ImageView
             android:id="@+id/imageView"
